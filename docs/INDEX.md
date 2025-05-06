@@ -7,7 +7,7 @@ Add new content like genres, themes, talents, awards, objectives and incidents, 
 To create your first mod, your will find modding requirements and guidelines in [this document](MODDING-README.md).
 
 ## Adding Content
-Here you will find guidelines on how to add content for the most commun use cases that we have identified: [Common use cases](MODDING-USECASES.md)
+Here you will find guidelines on how to add content for the most commun use cases that we have identified: [Common use cases](MODDING-ADDING-CONTENT-USECASES.md)
 
 ## The Balancing System
 If you want to tweak the game's balacing for your mod, we have listed some information about how things work and some formulas that the game is using in this [balancing document](MODDING-BALANCING-README.md).
@@ -21,3 +21,6 @@ You can easily add more quests and incidents in The Executive using the 3 docume
 
 ## Uploading your mod to Steam Workshop
 Once your mod is ready, follow this document to [publish it on the Steam Workshop](MODDING-WORKSHOP.md)
+
+## For questions and suggestions
+Check out our [Discord](https://discord.gg/VrDDSckHPE)

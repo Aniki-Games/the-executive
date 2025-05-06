@@ -3,7 +3,7 @@ site_url: https://aniki-games.github.io/the-executive/
 nav: 
   - Home: INDEX.md
   - Modding Requirements: MODDING-README.md
-  - Adding Content: MODDING-USECASES.md
+  - Adding Content: MODDING-ADDING-CONTENT-USECASES.md
   - Balancing System: MODDING-BALANCING-README.md
   - Quest System: QUEST-README.md
   - Incident System: INCIDENTS-README.md
