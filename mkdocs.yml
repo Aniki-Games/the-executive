@@ -1,0 +1,17 @@
+site_name: The Executive Modding Support
+site_url: ""
+nav: 
+  - Home: INDEX.md
+  - Modding Requirements: MODDING-README.md
+  - Adding Content: MODDING-USECASES.md
+  - Balancing System: MODDING-BALANCING-README.md
+  - Quest System: QUEST-README.md
+  - Incident System: INCIDENTS-README.md
+  - Actions and Conditions: ACTIONS-CONDITIONS-README.md
+  - Uploading to Steam Workshop: MODDING-WORKSHOP.md
+use_directory_urls: false
+theme: 
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo 
