@@ -1,4 +1,5 @@
 site_name: The Executive Modding Support
+site_url: https://aniki-games.github.io/the-executive/
 nav: 
   - Home: INDEX.md
   - Modding Requirements: MODDING-README.md
