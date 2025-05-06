@@ -1,5 +1,4 @@
 site_name: The Executive Modding Support
-site_url: ""
 nav: 
   - Home: INDEX.md
   - Modding Requirements: MODDING-README.md
