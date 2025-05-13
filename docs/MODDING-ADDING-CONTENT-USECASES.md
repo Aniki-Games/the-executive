@@ -76,7 +76,7 @@ A few sprites don't have a declared prefix. To update those sprites, the new spr
  - Create a new “movies” record
 	 - Base location: Data > Hollywood OR Chinawood > Industry > Movies.json
  - Localize the distributor’s name in a csv file in a folder named “Localization”
- - OPTIONAL: Add a 80x100 poster image with the name “Movie.Poster.XXX” with XXX the value in the key "poster-key" of the associated record
+ - OPTIONAL: Add a 66x100 poster image with the name “Movie.Poster.XXX” with XXX the value in the key "poster-key" of the associated record
 
 ### 8. Add a theme
 
