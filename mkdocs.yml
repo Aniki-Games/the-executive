@@ -8,6 +8,7 @@ nav:
   - Quest System: QUEST-README.md
   - Incident System: INCIDENTS-README.md
   - Actions and Conditions: ACTIONS-CONDITIONS-README.md
+  - Dev Console: CONSOLE-COMMANDS.md
   - Uploading to Steam Workshop: MODDING-WORKSHOP.md
 use_directory_urls: false
 theme: 
