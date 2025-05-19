@@ -1,0 +1,957 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aniki-games.github.io/the-executive/MODDING-ADDING-CONTENT-USECASES.html">
+      
+      
+        <link rel="prev" href="MODDING-README.html">
+      
+      
+        <link rel="next" href="MODDING-BALANCING-README.html">
+      
+      
+      <link rel="icon" href="assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Adding Content - The Executive Modding Support</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#content-creation-usecases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="The Executive Modding Support" class="md-header__button md-logo" aria-label="The Executive Modding Support" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Executive Modding Support
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adding Content
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="The Executive Modding Support" class="md-nav__button md-logo" aria-label="The Executive Modding Support" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    The Executive Modding Support
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="INDEX.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MODDING-README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modding Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Adding Content
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="MODDING-ADDING-CONTENT-USECASES.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding Content
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on localization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on sprite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Content
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-an-ip-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add an IP source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-an-ip-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Add an IP license
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-a-talent" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Add a talent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-an-award" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Add an award
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-add-a-seasonal-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Add a seasonal event
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-add-a-distributor" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Add a distributor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-add-a-competing-movie" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Add a competing movie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-add-a-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Add a theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-add-a-genre" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Add a genre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-add-a-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Add a rating
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MODDING-BALANCING-README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Balancing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="QUEST-README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quest System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="INCIDENTS-README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Incident System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ACTIONS-CONDITIONS-README.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actions and Conditions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CONSOLE-COMMANDS.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dev Console
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MODDING-WORKSHOP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uploading to Steam Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on localization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes on sprite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Content
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-an-ip-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add an IP source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-an-ip-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Add an IP license
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-a-talent" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Add a talent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-an-award" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Add an award
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-add-a-seasonal-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Add a seasonal event
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-add-a-distributor" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Add a distributor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-add-a-competing-movie" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Add a competing movie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-add-a-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Add a theme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-add-a-genre" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Add a genre
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-add-a-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Add a rating
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="content-creation-usecases">Content Creation Usecases</h1>
+<p>In this section you will find guidelines for the most common modding use cases.</p>
+<h2 id="notes-on-localization">Notes on localization</h2>
+<p>Generally, the localization prefixes are defined in one of the various SETTINGS Json files available in the Data folder. If unclear, we advise you to look at the Base localization files in the Data folder to understand the prefix structure of the various elements listed below.</p>
+<h2 id="notes-on-sprite">Notes on sprite</h2>
+<p>Generally, the Sprite prefixes ("icon-prefix") are defined in one of the various SETTINGS Json files available in the Data folder. If unclear, we advise you to look at the Base sprite names in the Data&gt;Shared&gt;Images folder to understand the prefix structure of the various elements listed below.</p>
+<p>A few sprites don't have a declared prefix. To update those sprites, the new sprite must have the same name and be located inside a mod subfolder named "Ui". They only work with industry specific mods (not shared).
+     - Base location: Data &gt; Hollywood OR Chinawood &gt; Ui</p>
+<h2 id="adding-content">Adding Content</h2>
+<h3 id="1-add-an-ip-source">1. Add an IP source</h3>
+<ul>
+<li>Create a new “ip-sources” record <ul>
+<li>Base location: Data &gt; Shared &gt; Industry &gt; IpLicenses-SETTINGS.json</li>
+</ul>
+</li>
+<li>Localize the IP source name in a csv file in a folder named “Localization” </li>
+<li>Add a 24x24 and a 120x120 images</li>
+<li>OPTIONAL: Update / create “ip-licenses” records to use the new IP source in the "ip-source" key</li>
+</ul>
+<h3 id="2-add-an-ip-license">2. Add an IP license</h3>
+<ul>
+<li>Create a new "ip-licenses" record<ul>
+<li>Base location: Data &gt; Shared &gt; Industry &gt; IpLicenses.json</li>
+</ul>
+</li>
+<li>Localize the IP name and description in a csv file in a folder named “Localization” </li>
+<li>OPTIONAL: Add a 54x68 image with the name “IP.Poster.XXX” with XXX the value in the key "poster-key" of the associated record<blockquote>
+<p>NOTES ON SETUP: The UI/UX only allows to list:
+        - Max 1 genre per record
+        - Max 1 theme per record
+        - Max 1 rating per record</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-add-a-talent">3. Add a talent</h3>
+<ul>
+<li>Create a new “actors” or “directors” record<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Industry &gt; Actor.json OR Director.json</li>
+</ul>
+</li>
+<li>Localize the talent’s name in a csv file in a folder named “Localization” <blockquote>
+<p>NOTE ON SETUP: Requires one history record per active year</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="4-add-an-award">4. Add an award</h3>
+<ul>
+<li>Create a new “awards” record<ul>
+<li>Base location: Data &gt; Shared &gt; Industry &gt; Awards.json</li>
+</ul>
+</li>
+<li>Localize the various name and description keys in a csv file in a folder named “Localization” </li>
+<li>Add the award various images:<ul>
+<li>Back of the nominee card: 220x280</li>
+<li>Award Statue: 362x730</li>
+<li>Award Statue Shiny VFX: 362x730</li>
+<li>Award winner card logo: 70x70</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>NOTE ON SETUP: The sprites in the movie details window can't be added as the list of awards is static (limited to Romy and Gaspar).</p>
+</blockquote>
+<h3 id="5-add-a-seasonal-event">5. Add a seasonal event</h3>
+<ul>
+<li>Create a new “seasons” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Seasons.json</li>
+</ul>
+</li>
+<li>Localize the seasonal event’s name in a csv file in a folder named “Localization” </li>
+<li>Add a 24x24 image</li>
+</ul>
+<blockquote>
+<p>NOTE ON SETUP: The UI can only show up to two seasonal events for any given month</p>
+</blockquote>
+<h3 id="6-add-a-distributor">6. Add a distributor</h3>
+<ul>
+<li>Create a new “distributors” record (note: you need one history record per active decade)<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Industry &gt; Distributors.json</li>
+</ul>
+</li>
+<li>Localize the distributor’s name in a csv file in a folder named “Localization”  </li>
+<li>OPTIONAL: Add a 180x110 logo image</li>
+</ul>
+<blockquote>
+<p>NOTE ON SETUP: The UI can only show up to two favorite genres listed in the “affinities” array at any given time</p>
+</blockquote>
+<h3 id="7-add-a-competing-movie">7. Add a competing movie</h3>
+<ul>
+<li>Create a new “movies” record<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Industry &gt; Movies.json</li>
+</ul>
+</li>
+<li>Localize the distributor’s name in a csv file in a folder named “Localization”</li>
+<li>OPTIONAL: Add a 66x100 poster image with the name “Movie.Poster.XXX” with XXX the value in the key "poster-key" of the associated record</li>
+</ul>
+<h3 id="8-add-a-theme">8. Add a theme</h3>
+<ul>
+<li>Create a new “theme” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Enums.json</li>
+</ul>
+</li>
+<li>Localize the theme’s name in a csv file in a folder named “Localization” </li>
+<li>Add a “genre-vs-theme” row to “affinities”<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Affinities.json</li>
+</ul>
+</li>
+<li>Add the new theme to the "theme-affinity" dictionary of each “features” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Features.json</li>
+</ul>
+</li>
+<li>Add the new theme to the "theme-score" dictionary of each “directors” and “actors” record</li>
+<li>Add a 24x24 and a 90x90 images</li>
+<li>OPTIONAL: Update / Create “ip-licenses” records to use the new theme as a required characteristic in the “themes” array</li>
+</ul>
+<h3 id="9-add-a-genre">9. Add a genre</h3>
+<blockquote>
+<p>NOTE: mods adding a genre need to be at the industry level (i.e. not Shared) as some of the required modifications listed below can only be done at the industry level.</p>
+</blockquote>
+<ul>
+<li>Create a new “genre” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Enums.json</li>
+</ul>
+</li>
+<li>Localize the genre’s name in a csv file in a folder named “Localization”</li>
+<li>In “affinities”:<ul>
+<li>Add a column and row to “genre-vs-genre”</li>
+<li>Add a column to “genre-vs-rating”</li>
+<li>Add a column to “genre-vs-planning”</li>
+<li>Add a column to “genre-vs-theme”</li>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Affinities.json</li>
+</ul>
+</li>
+<li>Add the new genre to the "genre-score" dictionary of each “directors” and “actors” record</li>
+<li>Add a column to the “genre-vs-size” rule in the “bo-baseline” section of each “markets” record<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Markets &gt; Domestic-BoxOffice.json AND International-BoxOffice.json</li>
+</ul>
+</li>
+<li>Add a column to the “base-genre-01” and “base-genre-02” rules in the “baseline” section of “audience” and “critics”<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Metrics &gt; Audience.json AND Critics.json</li>
+</ul>
+</li>
+<li>Add the new genre to the "genre-bonus" dictionary of each “seasons” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Seasons.json</li>
+</ul>
+</li>
+<li>OPTIONAL: Update / Create “distributors” records to use the new genre as a favorite one in the “affinities” array</li>
+<li>OPTIONAL: Update / Create competing “movies” records to use the new genre in the "genre-01" or "genre-02" keys</li>
+<li>OPTIONAL: Update / Create “ip-licenses” records to use the new genre as a required characteristic in the “genres” array</li>
+<li>Add a 24x24 and a 90x90 images</li>
+</ul>
+<h3 id="10-add-a-rating">10. Add a rating</h3>
+<blockquote>
+<p>NOTE: mods adding a rating need to be at the industry level (i.e. not Shared) as some of the required modifications listed below can only be done at the industry level.</p>
+</blockquote>
+<ul>
+<li>Create a new “ratings” record</li>
+<li>Localize the rating’s name (including short version) in a csv file in a folder named “Localization” </li>
+<li>Add a “genre-vs-rating” row to “affinities”<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Affinities.json</li>
+</ul>
+</li>
+<li>Add the new rating to the "rating-affinity" dictionary of each “features” record<ul>
+<li>Base location: Data &gt; Shared &gt; Other &gt; Features.json</li>
+</ul>
+</li>
+<li>Add a column to the “base-rating” rule in the “bo-baseline” section of each “markets” record<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Markets &gt; Domestic-BoxOffice.json AND International-BoxOffice.json</li>
+</ul>
+</li>
+<li>Add a column to the “base-rating” rule in the “baseline” section of “audience” and “critics”<ul>
+<li>Base location: Data &gt; Hollywood OR Chinawood &gt; Metrics &gt; Audience.json AND Critics.json</li>
+</ul>
+</li>
+<li>OPTIONAL: Update / Create  “movies” records to use the new rating in the "rating" key</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
